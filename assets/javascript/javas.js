@@ -13,6 +13,8 @@ var score = 0;
 
 var run = true;
 var run2 = false;
+var run3 = false;
+var run4 = false;
 
 intra = setInterval(function() {
     timer.innerText = " " + count;
@@ -23,10 +25,10 @@ intra = setInterval(function() {
     four.textContent = "2";
     question.textContent = "What is 1 + 1?";
 
+    if (run == true){
     for (var i = 0; i < all.length; i++) {
         all[i].addEventListener("click", function() {
-            data = this.dataset.number;
-            if (run == true){
+                data = this.dataset.number;
                 if (data == "1" || data == "2" || data == "3"){
                     run = false;
                     run2 = true;
@@ -41,8 +43,8 @@ intra = setInterval(function() {
                     count = 3;
                     presecond();
                 }
-            }
-        })
+            })
+        }
     }
     if ( count == -1 ){
         clearInterval(intra);
@@ -89,10 +91,11 @@ function second() {
         four.textContent = "11";
         question.textContent = "5 + 5 ?";
 
+        if (run2 == true){
         for (var i = 0; i < all.length; i++) {
             all[i].addEventListener("click", function() {
-                data = this.dataset.number;
-                if (run2 == true){
+                console.log(data);
+                    data = this.dataset.number;
                     if (data == "4" || data == "2" || data == "3"){
                         run2 = false;
                         run3 = true;
@@ -107,8 +110,8 @@ function second() {
                         count = 3;
                         prethird();
                     }
-                }
-            })
+                })
+            }
         }
 
         if (count == -1) {
@@ -129,7 +132,7 @@ function prethird() {
         count --;
 
         if (data == "4"){
-            one.style.background = "lightcoral";
+            four.style.background = "lightcoral";
         } else if (data == "2"){
             two.style.background = "lightcoral";
         } else if (data == "3"){
@@ -159,16 +162,18 @@ function third() {
 
         for (var i = 0; i < all.length; i++) {
             all[i].addEventListener("click", function() {
-                data = this.dataset.number;
                 if (run3 == true){
+                    data = this.dataset.number;
                     if (data == "4" || data == "2" || data == "1"){
                         run3 = false;
+                        run4 = true;
                         clearInterval(intra);
                         count = 3;
                         prefourth();
                     } else if ( data == "3") {
                         score++;
                         run3 = false;
+                        run4 = true;
                         clearInterval(intra);
                         count = 3;
                         prefourth();
@@ -180,6 +185,7 @@ function third() {
         if (count == -1) {
             clearInterval(intra);
             run3 = false;
+            run4 = true;
             count = 3;
             prefourth();
         }
@@ -187,8 +193,93 @@ function third() {
 }
 
 function prefourth() {
-    for ( var i = 0; i < all.length; i++ ){
-        all[i].style.background = "lightgray";
-    }
-    alert("done");
+    intra = setInterval(function() {
+        three.style.background = "lightgreen";
+        question.textContent = "The Answer was 4";
+        timer.innerText = " " + count;
+        count --;
+
+        if (data == "4"){
+            four.style.background = "lightcoral";
+        } else if (data == "2"){
+            two.style.background = "lightcoral";
+        } else if (data == "1"){
+            one.style.background = "lightcoral";
+        }
+
+        if (count == 0){
+            clearInterval(intra);
+            count = 10;
+            fourth();
+        }
+    }, 1000);
+}
+
+function fourth() {
+    intra = setInterval(function() {
+        for ( var i = 0; i < all.length; i++ ){
+            all[i].style.background = "lightgray";
+        }
+        timer.innerText = " " + count;
+        count--;
+        one.textContent = "12";
+        two.textContent = "10";
+        three.textContent = "11";
+        four.textContent = "13";
+        question.textContent = "2 * 6"
+
+        for (var i = 0; i < all.length; i++) {
+            all[i].addEventListener("click", function() {
+                if (run4 == true){
+                    data = this.dataset.number;
+                    if (data == "4" || data == "2" || data == "3"){
+                        run4 = false;
+                        clearInterval(intra);
+                        count = 3;
+                        prefifth();
+                    } else if ( data == "1") {
+                        score++;
+                        run4 = false;
+                        clearInterval(intra);
+                        count = 3;
+                        prefifth();
+                    }
+                }
+            })
+        }
+
+        if (count == -1) {
+            clearInterval(intra);
+            run4 = false;
+            count = 3;
+            prefifth();
+        }
+    }, 1000)
+}
+
+function prefifth() {
+    intra = setInterval(function() {
+        one.style.background = "lightgreen";
+        question.textContent = "The Answer was 12";
+        timer.innerText = " " + count;
+        count --;
+
+        if (data == "4"){
+            four.style.background = "lightcoral";
+        } else if (data == "2"){
+            two.style.background = "lightcoral";
+        } else if (data == "3"){
+            three.style.background = "lightcoral";
+        }
+
+        if (count == 0){
+            clearInterval(intra);
+            count = 10;
+            fifth();
+        }
+    }, 1000);
+}
+
+function fifth(){
+    alert("no");
 }
