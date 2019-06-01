@@ -26,30 +26,27 @@ intra = setInterval(function() {
     question.textContent = "What is 1 + 1?";
 
     if (run == true){
-    for (var i = 0; i < all.length; i++) {
-        all[i].addEventListener("click", function() {
-                data = this.dataset.number;
-                if (data == "1" || data == "2" || data == "3"){
-                    run = false;
-                    run2 = true;
-                    clearInterval(intra);
-                    count = 3;
-                    presecond();
-                } else if ( data == "4") {
-                    score++;
-                    run2 = true;
-                    run = false;
-                    clearInterval(intra);
-                    count = 3;
-                    presecond();
-                }
-            })
-        }
+        for (var i = 0; i < all.length; i++) {
+            all[i].addEventListener("click", function() {
+                    data = this.dataset.number;
+                    if (data == "1" || data == "2" || data == "3"){
+                        run = false;
+                        clearInterval(intra);
+                        count = 3;
+                        presecond();
+                    } else if ( data == "4") {
+                        score++;
+                        run = false;
+                        clearInterval(intra);
+                        count = 3;
+                        presecond();
+                    }
+                })
+            }
     }
     if ( count == -1 ){
         clearInterval(intra);
         run = false;
-        run2 = true;
         count = 3;
         presecond();
     }
@@ -73,6 +70,7 @@ function presecond() {
         if (count == 0){
             clearInterval(intra);
             count = 10;
+            run2 = true;
             second();
         }
     }, 1000);
