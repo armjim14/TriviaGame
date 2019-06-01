@@ -19,11 +19,11 @@ var run4 = false;
 intra = setInterval(function() {
     timer.innerText = " " + count;
     count--;
-    one.textContent = "1";
-    two.textContent = "5";
-    three.textContent = "9";
-    four.textContent = "2";
-    question.textContent = "What is 1 + 1?";
+    one.textContent = "5";
+    two.textContent = "50";
+    three.textContent = "10";
+    four.textContent = "1";
+    question.textContent = "how far away is the sun in astronomical units?";
 
     if (run == true){
         for (var i = 0; i < all.length; i++) {
@@ -55,7 +55,7 @@ intra = setInterval(function() {
 function presecond() {
     intra = setInterval(function() {
         four.style.background = "lightgreen";
-        question.textContent = "The Answer was 2";
+        question.textContent = "The Answer was 1 AU";
         timer.innerText = " " + count;
         count --;
 
@@ -78,16 +78,16 @@ function presecond() {
 
 function second() {
     intra = setInterval(function() {
-        for ( var i = 0; i < all.length; i++ ){
-            all[i].style.background = "lightgray";
-        }
+        $(".all").css("background", "lightgray");
+        $(".all:hover").css("background", "darkgray");
+
         timer.innerText = " " + count;
         count--;
         one.textContent = "10";
         two.textContent = "8";
         three.textContent = "12";
         four.textContent = "11";
-        question.textContent = "5 + 5 ?";
+        question.textContent = "What is the speed of light";
 
         if (run2 == true){
         for (var i = 0; i < all.length; i++) {
@@ -147,9 +147,8 @@ function prethird() {
 
 function third() {
     intra = setInterval(function() {
-        for ( var i = 0; i < all.length; i++ ){
-            all[i].style.background = "lightgray";
-        }
+        $(".all").css("background", "lightgray");
+        $(".all:hover").css("background", "darkgray");
         timer.innerText = " " + count;
         count--;
         one.textContent = "8";
@@ -215,9 +214,8 @@ function prefourth() {
 
 function fourth() {
     intra = setInterval(function() {
-        for ( var i = 0; i < all.length; i++ ){
-            all[i].style.background = "lightgray";
-        }
+        $(".all").css("background", "lightgray");
+        $(".all:hover").css("background", "darkgray");
         timer.innerText = " " + count;
         count--;
         one.textContent = "12";
