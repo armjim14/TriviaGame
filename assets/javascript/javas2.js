@@ -4,29 +4,25 @@ var timer = $("#timer");
 var intra = "";
 var data = "";
 
-var run = true;
-
 intra = setInterval(function() {
     $("#choice").css("display", "Block");
     timer.text(" " + count);
     count--;
 
-    if (run){
-        $(".all").on("click", function(){
-            clearInterval(intra);
-            data = $(this).data("number");
-            if(data == "a4"){
-                run = false;
-                score++;
-                count = 3;
-                presecond();
-            } else {
-                run = false;
-                count = 3;
-                presecond();
-            }
-        })
-    }
+    $(".all").on("click", function(){
+        clearInterval(intra);
+        data = $(this).data("number");
+        if(data == "a4"){
+            run = false;
+            score++;
+            count = 3;
+            presecond();
+        } else {
+            run = false;
+            count = 3;
+            presecond();
+        }
+    })
     if(count === 0){
         clearInterval(intra);
         run = false;
@@ -36,6 +32,7 @@ intra = setInterval(function() {
 }, 1000);
 
 function presecond() {
+    $(".all").off("click");
     intra = setInterval( function() {
         timer.text(" " + count);
         count--;
@@ -84,6 +81,7 @@ function second() {
 }
 
 function prethird() {
+    $(".all2").off("click");
     intra = setInterval( function() {
         timer.text(" " + count);
         count--;
@@ -132,6 +130,7 @@ function third() {
 }
 
 function prefourth() {
+    $(".all3").off("click");
     intra = setInterval( function() {
         timer.text(" " + count);
         count--;
@@ -180,6 +179,7 @@ function fourth() {
 }
 
 function prefifth() {
+    $(".all4").off("click");
     intra = setInterval( function() {
         timer.text(" " + count);
         count--;
