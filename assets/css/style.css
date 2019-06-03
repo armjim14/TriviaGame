@@ -34,20 +34,21 @@ h3 {
     margin-top: 50px;
 }
 
-#choices {
+#choice, #choice2, #choice3, #choice4 {
     margin-top: 20px;
+    display: none;
 }
 
-.all {
+.all, .all2, .all3, .all4 {
     text-align: center;
     font-size: 30px;
 }
 
-.all:hover {
+.all:hover, .all2:hover, .all3:hover, .all4:hover {
     background-color: darkgray;
     color: white;
 }
 
 /*  1. how far away is the sun in astronomical units?
     2. what is the speed of light
-    3. what would happen to a person that reaches the speed of light?*/
+    3. what would happen to a humans body that would reach speed of light?*/

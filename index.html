@@ -7,25 +7,46 @@
     <title>Trivia</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
 </head>
 <body>
-<div id="contain">
-    <header>
-        <h1>Trivia</h1>
-        <h3>Time Remaining:<span id="timer"></span></h3>
-    <hr>
-    </header>
-    <section>
-        <p id="question"></p><br> 
-        <div id="choices">
-            <p id="one" class="all" data-number="1"></p>
-            <p id="two" class="all" data-number="2"></p>
-            <p id="three" class="all" data-number="3"></p>
-            <p id="four" class="all" data-number="4"></p>
-        </div>
-    </section>
-</div>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/javascript/javas.js"></script>
+        <div id="contain">
+                <header>
+                    <h1>Trivia</h1>
+                    <h3>Time Remaining:<span id="timer"></span></h3>
+                <hr>
+                </header>
+                <section>
+                    <div id="choice">
+                        <p id="question">1: how far away is the sun in astronomical units?</p><br> 
+                        <p id="one" class="all" data-number="a1">5</p>
+                        <p id="two" class="all" data-number="a2">50</p>
+                        <p id="three" class="all" data-number="a3">10</p>
+                        <p id="four" class="all" data-number="a4">1</p>
+                    </div>
+                    <div id="choice2">
+                        <p id="question">2: What is the speed of light</p><br> 
+                        <p id="one2" class="all2" data-number="b1">186,000 Miles Per Second</p>
+                        <p id="two2" class="all2" data-number="b2">196,000 Miles Per Second</p>
+                        <p id="three2" class="all2" data-number="b3">146,000 Miles Per Second</p>
+                        <p id="four2" class="all2" data-number="b4">126,00 Miles Per Second</p>
+                    </div>
+                    <div id="choice3">
+                        <p id="question">3: What is the fifth Planet from our sun</p><br> 
+                        <p id="one3" class="all3" data-number="c1">Uranus</p>
+                        <p id="two3" class="all3" data-number="c2">Saturn</p>
+                        <p id="three3" class="all3" data-number="c3">Jupiter</p>
+                        <p id="four3" class="all3" data-number="c4">Neptune</p>
+                    </div>
+                    <div id="choice4">
+                        <p id="question">4: How long does it take light to travel one AU?</p><br> 
+                        <p id="one4" class="all4" data-number="d1">8 Minutes</p>
+                        <p id="two4" class="all4" data-number="d2">12 Minutes</p>
+                        <p id="three4" class="all4" data-number="d3">5 Minutes</p>
+                        <p id="four4" class="all4" data-number="d4">20 Minutes</p>
+                    </div>
+                </section>
+            </div>
+<script type="text/javascript" src="assets/javascript/javas2.js" ></script>
 </body>
 </html>
