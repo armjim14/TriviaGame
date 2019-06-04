@@ -187,14 +187,161 @@ function prefifth() {
         $("#question").text("The answer was 186,000 Miles Per Second");
         $("#one4").css("background", "lightgreen");
 
-        if (data == "d4"){ $("#four3").css("background", "lightcoral"); }
-        else if (data == "d2") { $("#two3").css("background", "lightcoral"); }
+        if (data == "d4"){ $("#four4").css("background", "lightcoral"); }
+        else if (data == "d2") { $("#two4").css("background", "lightcoral"); }
         else if ( data == "d3" ) { $("#three4").css("background", "lightcoral"); }
 
         if( count == 0 ){
             clearInterval(intra);
             count = 10;
-            // fourth();
+            fifth();
+        }
+    }, 1000 )
+}
+
+function fifth() {
+    $("#choice4").css("display", "none");
+    $("#choice5").css("display", "Block");
+
+    intra = setInterval(function() {
+        timer.text(" " + count);
+        count--;
+    
+        $(".all5").on("click", function(){
+            clearInterval(intra);
+            data = $(this).data("number");
+            if(data == "e1"){
+                score++;
+                count = 3;
+                presixth();
+            } else {
+                count = 3;
+                presixth();
+            }
+        })
+        if(count === 0){
+            clearInterval(intra);
+            count = 3;
+            presixth();
+        }
+    }, 1000);
+}
+
+function presixth() {
+    $(".all5").off("click");
+    intra = setInterval( function() {
+        timer.text(" " + count);
+        count--;
+
+        $("#question").text("The answer was Venus");
+        $("#one5").css("background", "lightgreen");
+
+        if (data == "e4"){ $("#four5").css("background", "lightcoral"); }
+        else if (data == "e2") { $("#two5").css("background", "lightcoral"); }
+        else if ( data == "e3" ) { $("#three5").css("background", "lightcoral"); }
+
+        if( count == 0 ){
+            clearInterval(intra);
+            count = 10;
+            sixth();
+        }
+    }, 1000 )
+}
+
+function sixth() {
+    $("#choice5").css("display", "none");
+    $("#choice6").css("display", "Block");
+
+    intra = setInterval(function() {
+        timer.text(" " + count);
+        count--;
+    
+        $(".all6").on("click", function(){
+            clearInterval(intra);
+            data = $(this).data("number");
+            if(data == "f3"){
+                score++;
+                count = 3;
+                preseven();
+            } else {
+                count = 3;
+                preseven();
+            }
+        })
+        if(count === 0){
+            clearInterval(intra);
+            count = 3;
+            preseven();
+        }
+    }, 1000);
+}
+
+function preseven() {
+    $(".all6").off("click");
+    intra = setInterval( function() {
+        timer.text(" " + count);
+        count--;
+
+        $("#question").text("The answer was 24,900");
+        $("#three6").css("background", "lightgreen");
+
+        if (data == "f4"){ $("#four6").css("background", "lightcoral"); }
+        else if (data == "f2") { $("#two6").css("background", "lightcoral"); }
+        else if ( data == "f1" ) { $("#one6").css("background", "lightcoral"); }
+
+        if( count == 0 ){
+            clearInterval(intra);
+            count = 10;
+            seven();
+        }
+    }, 1000 )
+}
+
+function seven() {
+    $("#choice6").css("display", "none");
+    $("#choice7").css("display", "Block");
+
+    intra = setInterval(function() {
+        timer.text(" " + count);
+        count--;
+    
+        $(".all7").on("click", function(){
+            clearInterval(intra);
+            data = $(this).data("number");
+            if(data == "g4"){
+                score++;
+                count = 3;
+                preeight();
+            } else {
+                count = 3;
+                preeight();
+            }
+        })
+        if(count === 0){
+            clearInterval(intra);
+            count = 3;
+            preeight();
+        }
+    }, 1000);
+}
+
+function preeight() {
+    $(".all7").off("click");
+    intra = setInterval( function() {
+        timer.text(" " + count);
+        count--;
+
+        $("#question").text("The answer 101,000 Years");
+        $("#four7").css("background", "lightgreen");
+
+        if (data == "g3"){ $("#three7").css("background", "lightcoral"); }
+        else if (data == "g2") { $("#two7").css("background", "lightcoral"); }
+        else if ( data == "g1" ) { $("#one7").css("background", "lightcoral"); }
+
+        if( count == 0 ){
+            clearInterval(intra);
+            count = 10;
+            // seven();
         }
     }, 1000 )
 }
