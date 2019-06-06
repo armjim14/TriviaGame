@@ -1,8 +1,17 @@
-var count = 10;
+var count = 20;
 var score = 0;
 var timer = $("#timer");
 var intra = "";
 var data = "";
+
+var run = true;
+var run2 = true;
+var run3 = true;
+var run4 = true;
+var run5 = true;
+var run6 = true;
+var run7 = true;
+
 
 intra = setInterval(function() {
     $("#choice").css("display", "Block");
@@ -13,19 +22,20 @@ intra = setInterval(function() {
         clearInterval(intra);
         data = $(this).data("number");
         if(data == "a4"){
-            run = false;
-            score++;
+            if (run){
+                score++;
+                run = false;
+            }
+            console.log(score);
             count = 3;
             presecond();
         } else {
-            run = false;
             count = 3;
             presecond();
         }
     })
     if(count === 0){
         clearInterval(intra);
-        run = false;
         count = 3;
         presecond();
     }
@@ -37,6 +47,7 @@ function presecond() {
         timer.text(" " + count);
         count--;
 
+        $("#question").css("color", "purple");
         $("#question").text("The answer was 1AU")
         $("#four").css("background", "lightgreen");
 
@@ -46,7 +57,7 @@ function presecond() {
 
         if( count == 0 ){
             clearInterval(intra);
-            count = 10;
+            count = 20;
             second();
         }
     }, 1000 )
@@ -64,7 +75,10 @@ function second() {
             clearInterval(intra);
             data = $(this).data("number");
             if(data == "b1"){
-                score++;
+                if (run2){
+                    score++;
+                    run2 = false;
+                }
                 count = 3;
                 prethird();
             } else {
@@ -86,7 +100,8 @@ function prethird() {
         timer.text(" " + count);
         count--;
 
-        $("#question").text("The answer was 186,000 Miles Per Second");
+        $("#question2").css("color", "purple");
+        $("#question2").text("The answer was 186,000 Miles Per Second");
         $("#one2").css("background", "lightgreen");
 
         if (data == "b4"){ $("#four2").css("background", "lightcoral"); }
@@ -95,7 +110,7 @@ function prethird() {
 
         if( count == 0 ){
             clearInterval(intra);
-            count = 10;
+            count = 20;
             third();
         }
     }, 1000 )
@@ -113,7 +128,10 @@ function third() {
             clearInterval(intra);
             data = $(this).data("number");
             if(data == "c3"){
-                score++;
+                if (run3){
+                    score++;
+                    run3 = false;
+                }
                 count = 3;
                 prefourth();
             } else {
@@ -135,7 +153,8 @@ function prefourth() {
         timer.text(" " + count);
         count--;
 
-        $("#question").text("The answer was 186,000 Miles Per Second");
+        $("#question3").text("The answer was Jupiter");
+        $("#question3").css("color", "purple");
         $("#three3").css("background", "lightgreen");
 
         if (data == "c4"){ $("#four3").css("background", "lightcoral"); }
@@ -144,7 +163,7 @@ function prefourth() {
 
         if( count == 0 ){
             clearInterval(intra);
-            count = 10;
+            count = 20;
             fourth();
         }
     }, 1000 )
@@ -162,7 +181,10 @@ function fourth() {
             clearInterval(intra);
             data = $(this).data("number");
             if(data == "d1"){
-                score++;
+                if (run4){
+                    score++;
+                    run4 = false;
+                }
                 count = 3;
                 prefifth();
             } else {
@@ -171,7 +193,7 @@ function fourth() {
             }
         })
         if(count === 0){
-            clearInterval(intra);
+            clearIntervsal(intra);
             count = 3;
             prefifth();
         }
@@ -184,7 +206,8 @@ function prefifth() {
         timer.text(" " + count);
         count--;
 
-        $("#question").text("The answer was 186,000 Miles Per Second");
+        $("#question4").text("The answer was 8 minutes");
+        $("#question4").css("color", "purple");
         $("#one4").css("background", "lightgreen");
 
         if (data == "d4"){ $("#four4").css("background", "lightcoral"); }
@@ -193,7 +216,7 @@ function prefifth() {
 
         if( count == 0 ){
             clearInterval(intra);
-            count = 10;
+            count = 20;
             fifth();
         }
     }, 1000 )
@@ -211,7 +234,10 @@ function fifth() {
             clearInterval(intra);
             data = $(this).data("number");
             if(data == "e1"){
-                score++;
+                if (run5){
+                    score++;
+                    run5 = false;
+                }
                 count = 3;
                 presixth();
             } else {
@@ -233,7 +259,8 @@ function presixth() {
         timer.text(" " + count);
         count--;
 
-        $("#question").text("The answer was Venus");
+        $("#question5").text("The answer was Venus");
+        $("#question5").css("color", "purple");
         $("#one5").css("background", "lightgreen");
 
         if (data == "e4"){ $("#four5").css("background", "lightcoral"); }
@@ -242,7 +269,7 @@ function presixth() {
 
         if( count == 0 ){
             clearInterval(intra);
-            count = 10;
+            count = 20;
             sixth();
         }
     }, 1000 )
@@ -260,7 +287,10 @@ function sixth() {
             clearInterval(intra);
             data = $(this).data("number");
             if(data == "f3"){
-                score++;
+                if (run6){
+                    score++;
+                    run6 = false;
+                }
                 count = 3;
                 preseven();
             } else {
@@ -282,7 +312,8 @@ function preseven() {
         timer.text(" " + count);
         count--;
 
-        $("#question").text("The answer was 24,900");
+        $("#question6").text("The answer was 24,900");
+        $("#question6").css("color", "purple");
         $("#three6").css("background", "lightgreen");
 
         if (data == "f4"){ $("#four6").css("background", "lightcoral"); }
@@ -291,7 +322,7 @@ function preseven() {
 
         if( count == 0 ){
             clearInterval(intra);
-            count = 10;
+            count = 20;
             seven();
         }
     }, 1000 )
@@ -309,7 +340,10 @@ function seven() {
             clearInterval(intra);
             data = $(this).data("number");
             if(data == "g4"){
-                score++;
+                if (run7){
+                    score++;
+                    run7 = false;
+                }
                 count = 3;
                 preeight();
             } else {
@@ -331,7 +365,8 @@ function preeight() {
         timer.text(" " + count);
         count--;
 
-        $("#question").text("The answer 101,000 Years");
+        $("#question7").text("The answer 101,000 Years");
+        $("#question7").css("color", "purple");
         $("#four7").css("background", "lightgreen");
 
         if (data == "g3"){ $("#three7").css("background", "lightcoral"); }
@@ -340,8 +375,15 @@ function preeight() {
 
         if( count == 0 ){
             clearInterval(intra);
-            count = 10;
-            // seven();
+            getscore();
         }
     }, 1000 )
+}
+
+function getscore() {
+    var total = score / 7;
+    var truetotal = total.toFixed(2);
+    $("#question7").css("color", "blue");
+    $("#question7").text("You got " + truetotal + "%")
+    $("#dis").css("display", "none");
 }

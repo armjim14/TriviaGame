@@ -23,7 +23,7 @@ h3 {
     margin-top: 15px;
 }
 
-#question {
+#question, #question2, #question3, #question4, #question5, #question6, #question7 {
     color: blue;
     font-family: sans-serif;
     word-spacing: 2.5px;
@@ -49,6 +49,6 @@ h3 {
     color: white;
 }
 
-/*  1. how far away is the sun in astronomical units?
-    2. what is the speed of light
-    3. what would happen to a humans body that would reach speed of light?*/
+#dis {
+    display: block;
+}
